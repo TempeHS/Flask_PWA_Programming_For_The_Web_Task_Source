@@ -1,19 +1,19 @@
 {
-  "name": "Python Flask Development Container",
+  "name": "Flask PWA API Dev Container",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/sqlite:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
   "hostRequirements": {
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "pip install -r requirements.txt",
+  "updateContentCommand": "pip install -r requirements.txt || true",
   "postCreateCommand": "",
-  "postAttachCommand": {},
-  "portsAttributes": {
-    "5000": {
-      "label": "Application",
-      "onAutoForward": "openPreview"
-    }
-  },
   "customizations": {
     "vscode": {
       "settings": {
@@ -29,38 +29,46 @@
         "unwantedRecommendations": ["ms-python.vscode-python-envs"],
         "terminal.integrated.defaultProfile.windows": "Git Bash",
         "window.restoreWindows": "preserve",
+        "workbench.colorTheme": "Default Dark+",
+        "workbench.iconTheme": "vscode-icons",
         "workbench.editorAssociations": {
           "*.md": "vscode.markdown.preview.editor"
         },
-        "workbench.colorTheme": "Default Dark+",
-        "workbench.iconTheme": "vscode-icons",
         "github.copilot.enable": {
-      		"python": false,
-      		"html": false,
-      		"css": false,
-      		"SQL": false
-      	},
+          "python": false,
+          "html": false,
+          "css": false,
+          "SQL": false
+        },
         "chat.agent.enabled": false
       },
       "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.pylint",
+        "esbenp.prettier-vscode",
+        "bierner.markdown-mermaid",
+        "GitHub.codespaces",
         "McCarter.start-git-bash",
         "yy0931.vscode-sqlite3-editor",
-        "medo64.render-crlf",
         "ecmel.vscode-html-css",
-        "ms-python.python",
-        "esbenp.prettier-vscode",
         "oderwat.indent-rainbow",
-        "ritwickdey.LiveServer",
-        "mathematic.vscode-pdf",
-        "GitHub.codespaces",
-        "ms-python.debugpy",
-        "ms-python.vscode-pylance",
         "yahyabatulu.vscode-markdown-alert",
         "bierner.markdown-preview-github-styles",
         "mechatroner.rainbow-csv",
-        "ms-python.pylint"
+        "ritwickdey.LiveServer"
       ]
     }
   },
-  "forwardPorts": [5000]
+  "forwardPorts": [5000, 3000],
+  "portsAttributes": {
+    "5000": {
+      "label": "API (Flask)",
+      "onAutoForward": "openBrowser"
+    },
+    "3000": {
+      "label": "Frontend App",
+      "onAutoForward": "openBrowser"
+    }
+  }
 }
