@@ -62,11 +62,10 @@
   },
   "forwardPorts": [5000, 3000],
   "portsAttributes": {
-    "5000": {
-      "label": "API (Flask)",
-      "onAutoForward": "openBrowser"
-    },
     "3000": {
+      "label": "API (Flask)",
+    },
+    "5000": {
       "label": "Frontend App",
       "onAutoForward": "openBrowser"
     }
