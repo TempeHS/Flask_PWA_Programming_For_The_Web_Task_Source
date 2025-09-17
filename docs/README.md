@@ -104,7 +104,7 @@ pip install flask
 
 ### Create files and folders for your Flask Project
 
-1. Make a folder for all your working documents like photoshop \*.psd files, developer documentation etc.
+1. Make a folder for all your working documents like photoshop *.psd files, developer documentation etc.
 
 ```bash
 mkdir working_documents
@@ -133,11 +133,11 @@ Copy the [GNU GPL license](https://www.gnu.org/licenses/gpl-3.0.txt) text into t
 └── database_manager.py
 ```
 
-3. Populate a text file with a list of folders you need at the root of your project.
+3. Populate a text file with a list of folders (see above directory structure) you need at the root of your project.
 
 ```bash
 touch folders.txt
-code folder.txt
+code folders.txt
 ```
 
 4. Run a BASH script to read the text file and create the folders listed in it.
@@ -149,7 +149,7 @@ mkdir -p $line
 done < folders.txt
 ```
 
-5. Populate the file with a list of files you need at the root of your project.
+5. Populate the file with a list of files you need at the root of your project (see above directory structure).
 
 ```bash
 touch files.txt
