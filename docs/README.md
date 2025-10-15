@@ -104,7 +104,7 @@ pip install flask
 
 ### Create files and folders for your Flask Project
 
-1. Make a folder for all your working documents like photoshop *.psd files, developer documentation etc.
+1. Make a folder for all your working documents like photoshop \*.psd files, developer documentation etc.
 
 ```bash
 mkdir working_documents
@@ -181,6 +181,36 @@ touch my_queries.sql
 code my_queries.sql
 ```
 
+> [!Important] > **Git Checkpoint**: Now is a good time to check the status of your project and make your first commit. Version control helps you track changes and provides a backup of your work.
+
+1. Check what files have changed or are new.
+
+```bash
+cd ..
+git status
+```
+
+2. Stage all your new files and folders for the first commit.
+
+```bash
+git add .
+```
+
+3. Commit your work with a clear message describing what you've done.
+
+```bash
+git commit -m "Add project structure and folders"
+```
+
+4. Push your changes to GitHub.
+
+```bash
+git push
+```
+
+> [!Note]
+> The command `git status` shows you what files have changed. The command `git add .` stages all files in the current directory. Always check `git status` before committing to understand what you're about to commit. The commit message should be clear and describe what you've added or changed.
+
 > [!Note]
 > The following SQL queries are provided as an example only. Students are encouraged to select their content and design a database schema for it; ideas include:
 >
@@ -229,6 +259,28 @@ SELECT * FROM extension;
 SELECT * FROM extension WHERE language LIKE '#BASH';
 ```
 
+5. Check your work and commit your database.
+
+```bash
+cd ..
+git status
+```
+
+```bash
+git add database/
+```
+
+```bash
+git commit -m "Add database schema and sample data"
+```
+
+```bash
+git push
+```
+
+> [!Note]
+> You can target specific folders like `database/` when adding files. This is useful when you want to commit related changes together. Notice how the commit message describes what the database contains, not just that you "made a database".
+
 ---
 
 ### Make your graphic assets
@@ -248,6 +300,26 @@ SELECT * FROM extension WHERE language LIKE '#BASH';
 6. Web optimise the images using [TinyPNG](https://tinypng.com/)
 7. Save the optimised icons to static/icons
 8. Save the optimised logo and favicon to static/images
+9. Commit your graphic assets.
+
+```bash
+git status
+```
+
+```bash
+git add static/images/ static/icons/
+```
+
+```bash
+git commit -m "Add logo and icon assets"
+```
+
+```bash
+git push
+```
+
+> [!Tip]
+> You can add multiple folders in one command by listing them with spaces. It's good practice to commit related files together. Binary files like images should be optimised before committing to keep your repository size manageable.
 
 ---
 
@@ -299,6 +371,28 @@ code index.html
 <div class="container"></div>
 {% endblock %}
 ```
+
+7. Commit your HTML templates.
+
+```bash
+cd ..
+git status
+```
+
+```bash
+git add templates/
+```
+
+```bash
+git commit -m "Add base HTML templates with Jinja2"
+```
+
+```bash
+git push
+```
+
+> [!Note]
+> Notice the commit message mentions "Jinja2" to indicate the templating system being used. Good commit messages provide context about the technology or approach, not just what files were added.
 
 ---
 
@@ -404,6 +498,28 @@ nav h1 {
 }
 ```
 
+3. Commit your CSS and menu component.
+
+```bash
+cd ../..
+git status
+```
+
+```bash
+git add static/css/ templates/partials/
+```
+
+```bash
+git commit -m "Add navigation menu and base CSS styling"
+```
+
+```bash
+git push
+```
+
+> [!Tip]
+> When you make changes that span multiple directories (CSS and HTML), you can add them together in one commit if they're related. This keeps your git history organised and shows that the CSS and menu HTML work together.
+
 <HR
 
 ### Render your website
@@ -442,6 +558,27 @@ python main.py
 
 > [!Note]
 > To explain how Jinga2 works in this example when index.html is called, the render will start with layout.html with the code from partials/menu.html inserted where `{% include "partials/menu.html" %}` is and the index.html content that is between the `{% block content %}` and `{% endblock %}` will be inserted in the same tags in the layout.html.
+
+4. Commit your Flask backend code.
+
+```bash
+git status
+```
+
+```bash
+git add main.py
+```
+
+```bash
+git commit -m "Add Flask app with basic routing"
+```
+
+```bash
+git push
+```
+
+> [!Important]
+> This is a significant milestone - your Flask backend is now rendering templates! The commit message should reflect that this isn't just adding a file, but implementing core functionality.
 
 ---
 
@@ -580,6 +717,27 @@ code style.css
   text-justify: inter-word;
 }
 ```
+
+5. Commit your database integration and card styling.
+
+```bash
+git status
+```
+
+```bash
+git add database_manager.py main.py templates/index.html static/css/style.css
+```
+
+```bash
+git commit -m "Connect database to frontend with styled cards"
+```
+
+```bash
+git push
+```
+
+> [!Note]
+> This commit includes multiple files that work together: the database query function, the Flask route that uses it, the template that displays it, and the CSS that styles it. When multiple files are changed to implement one feature, they should be committed together with a message that describes the feature, not each file individually.
 
 ---
 
@@ -757,6 +915,27 @@ self.addEventListener("fetch", function (evt) {
 });
 ```
 
+4. Commit your PWA implementation.
+
+```bash
+git status
+```
+
+```bash
+git add static/manifest.json static/js/
+```
+
+```bash
+git commit -m "Implement PWA functionality with service worker"
+```
+
+```bash
+git push
+```
+
+> [!Important]
+> Congratulations! Your application is now a Progressive Web App. This commit represents a major feature addition. Test your PWA offline after pushing to ensure the service worker is caching correctly.
+
 ---
 
 ### Validate your PWA
@@ -772,6 +951,28 @@ Validation is important to ensure the app is compliant with [W3 web standards](h
 ![Screen cpature of Chrome Lighthouse report](/docs/README_resources/Edge_Application_Report.png "Click F12 and choose Lighthouse on the top menu of your developer tools")
 
 .
+
+3. Take screenshots of your validation reports and save them to working_documents.
+4. Commit your validation documentation.
+
+```bash
+git status
+```
+
+```bash
+git add working_documents/
+```
+
+```bash
+git commit -m "Add PWA validation reports"
+```
+
+```bash
+git push
+```
+
+> [!Note]
+> Documentation of testing and validation is important. These reports prove your app meets web standards and should be kept with your project.
 
 ---
 
@@ -853,5 +1054,123 @@ def add():
 .form-control {
 }
 ```
+
+5. When you complete the contact form extension, commit your work.
+
+```bash
+git status
+```
+
+```bash
+git add database/ database_manager.py main.py templates/add.html static/css/style.css
+```
+
+```bash
+git commit -m "Add contact form with database integration"
+```
+
+```bash
+git push
+```
+
+> [!Tip]
+> This extension adds significant new functionality. Your commit message should reflect that you've added a complete feature (form with database integration), not just individual files. As you continue to develop, remember to commit regularly at logical stopping points.
+
+## Understanding Git Best Practices
+
+Now that you've completed the tutorial, let's review what you've learned about version control:
+
+### When to Commit
+
+- **After completing a logical unit of work**: Database setup, styling a component, adding a feature
+- **When something works**: Test your code before committing
+- **Before making major changes**: Commit working code before experimenting
+- **At the end of a work session**: Even if not finished, commit your progress
+
+### Writing Good Commit Messages
+
+- **Be clear and specific**: "Add database schema" not "Update files"
+- **Use present tense**: "Add navigation menu" not "Added navigation menu"
+- **Describe what and why**: "Connect database to frontend with styled cards" explains the feature
+- **Keep it concise**: One line is usually enough for simple commits
+
+### Checking Your Work
+
+```bash
+# See what files have changed
+git status
+
+# See what lines have changed in tracked files
+git diff
+
+# See your commit history
+git log --oneline
+
+# See the last 5 commits
+git log --oneline -5
+```
+
+### Common Git Commands
+
+```bash
+# Check status (use this often!)
+git status
+
+# Stage specific files
+git add filename.py
+
+# Stage all changes
+git add .
+
+# Commit with message
+git commit -m "Your message here"
+
+# Push to GitHub
+git push
+
+# Pull latest changes (in collaborative projects)
+git pull
+```
+
+### Understanding .gitignore
+
+Some files shouldn't be committed to version control:
+
+- **System files**: `.DS_Store` (macOS), `Thumbs.db` (Windows)
+- **Dependencies**: `node_modules/`, Python virtual environments
+- **Environment files**: `.env` files with passwords or API keys
+- **Build files**: `__pycache__/`, `*.pyc`
+- **IDE files**: `.vscode/` settings (unless shared with team)
+
+Check if your project has a `.gitignore` file:
+
+```bash
+cat .gitignore
+```
+
+> [!Important] > **Never commit sensitive information** like passwords, API keys, or personal data. Use environment variables and `.gitignore` to protect sensitive files.
+
+### Collaborative Git Workflow
+
+When working in teams, you'll use branches:
+
+```bash
+# Create and switch to a new branch
+git checkout -b feature-name
+
+# See all branches
+git branch
+
+# Switch between branches
+git checkout main
+git checkout feature-name
+
+# Merge a branch into main
+git checkout main
+git merge feature-name
+```
+
+> [!Note]
+> For this tutorial, you've been working directly on the main branch. In professional development, you would create feature branches for new work and merge them via pull requests after review.
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/TempeHS/Flask_PWA_Programming_For_The_Web_Task_Source">Flask PWA Programming For The Web Task Source</a> and <a property="dct:title" rel="cc:attributionURL" href="https://github.com/TempeHS/Flask_PWA_Programming_For_The_Web_Task_Template">Flask PWA Programming For The Web Task Template</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/benpaddlejones">Ben Jones</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block; ">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International<img style="height:22px!important; margin-left:3px; vertical-align:text-bottom; " src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important; margin-left:3px; vertical-align:text-bottom; " src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important; margin-left:3px; vertical-align:text-bottom; " src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important; margin-left:3px; vertical-align:text-bottom; " src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
