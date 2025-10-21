@@ -826,7 +826,7 @@ def add():
 ```
 
 ```html
-<form action="/app.html" method="POST" class="box">
+<form action="/add.html" method="POST" class="box">
   <div>
     <label class="form-label">Email address</label>
     <input
