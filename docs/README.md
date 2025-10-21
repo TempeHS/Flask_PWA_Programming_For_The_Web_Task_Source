@@ -840,7 +840,7 @@ def add():
   </div>
   <div>
     <label class="form-label">Name</label>
-    <textarea class="form-control" name="text" id="name" rows="1"></textarea>
+    <textarea class="form-control" name="name" id="name" rows="1"></textarea>
   </div>
   <br />
   <div>
