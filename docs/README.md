@@ -104,7 +104,7 @@ pip install flask
 
 ### Create files and folders for your Flask Project
 
-1. Make a folder for all your working documents like photoshop *.psd files, developer documentation etc.
+1. Make a folder for all your working documents like photoshop \*.psd files, developer documentation etc.
 
 ```bash
 mkdir working_documents
@@ -816,7 +816,7 @@ def add():
       email = request.form['email']
       name = request.form['name']
       dbHandler.insertContact(email,name)
-      return render_template('/add.html', is_done=True")
+      return render_template('/add.html', is_done=True)
    else:
       return render_template('/add.html')
 ```
