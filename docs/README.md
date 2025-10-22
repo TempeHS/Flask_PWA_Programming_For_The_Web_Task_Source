@@ -826,7 +826,7 @@ def add():
 ```
 
 ```html
-<form action="/app.html" method="POST" class="box">
+<form action="/add.html" method="POST" class="box">
   <div>
     <label class="form-label">Email address</label>
     <input
@@ -840,7 +840,7 @@ def add():
   </div>
   <div>
     <label class="form-label">Name</label>
-    <textarea class="form-control" name="text" id="name" rows="1"></textarea>
+    <textarea class="form-control" name="name" id="name" rows="1"></textarea>
   </div>
   <br />
   <div>
