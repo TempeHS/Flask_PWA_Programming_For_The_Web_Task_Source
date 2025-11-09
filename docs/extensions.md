@@ -958,6 +958,10 @@ transition: all 0.3s ease;
    - Toggle device toolbar (mobile view)
    - Form should adapt to smaller screens
 
+**What the form should look like:**
+
+![Screen capture of the contact form](/docs/README_resources/form_example.png "The styled contact form with validation")
+
 ---
 
 ### 🧪 Complete Testing Checklist
